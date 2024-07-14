@@ -1,0 +1,17 @@
+# This is a Wrath buildfile. More information is available at: https://github.com/propensive/wrath/
+
+repo propensive/scintillate
+repo propensive/cataclysm
+repo propensive/hellenism
+repo propensive/punctuation
+repo propensive/honeycomb
+repo propensive/harlequin
+
+target prettydirect/web
+
+project prettydirect
+  module web
+    compiler  scala
+    sources   src/web
+    include   scintillate/server scintillate/servlet honeycomb/core cataclysm/core eucalyptus/ansi hellenism/core punctuation/html harlequin/md
+    main      direct.pretty.server

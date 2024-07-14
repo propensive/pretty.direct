@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: Inter;
+}
+h1 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 4em;
+}
+h2 {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+p {
+    max-width: 800px;
+    text-align: justify;
+    margin: auto;
+    line-height: 1.7em;
+    margin-bottom: 1.7em;
+    font-weight: 400;
+}
+a {
+    color: #c30;
+}
+footer { font-size: 0.8em; text-align: center; }

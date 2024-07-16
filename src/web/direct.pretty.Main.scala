@@ -12,7 +12,7 @@ import charDecoders.utf8
 import textSanitizers.skip
 import orphanDisposal.cancel
 import threadModels.platform
-import serpentine.hierarchies.simple
+import pathHierarchies.simple
 import stdioSources.virtualMachine.ansi
 import htmlRenderers.scalaSyntax
 
@@ -32,7 +32,7 @@ def page(content: Html[Flow]*): HtmlDoc =
 
 @main
 def server(): Unit =
-  quash:
+  mend:
     case ConcurrencyError(reason) =>
       Out.println(m"There was a concurrency error")
       ExitStatus.Fail(2).terminate()
@@ -42,7 +42,7 @@ def server(): Unit =
 class Service() extends JavaServlet(handle)
 
 def handle(using HttpRequest): HttpResponse[?] =
-  quash:
+  mend:
     case MarkdownError(detail) =>
       HttpResponse(page(Aside, H1(t"Bad markdown")))
 
